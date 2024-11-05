@@ -1,0 +1,166 @@
+header ul li a {
+  color: var(--title);
+  opacity: 0.8;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+header ul li a:hover {
+  color: var(--title);
+  opacity: 0.9;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--blue);
+  transition: 500ms;
+}
+
+header nav {
+  background-color: var(--bgHeader);
+  padding: 0.9rem 2rem;
+  border-radius: 60px;
+  box-shadow: 1px 1px 5px rgb(59, 59, 59);
+}
+
+.menubtn {
+  display: none;
+  color: white;
+  border-color: var(--bgHeader);
+
+}
+
+/* IconButton Styles */
+header .icon-menu,
+header .mode {
+  background-color: var(--bgHeader);
+  height: 2.4rem;
+  width: 2.4rem;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-align: center;
+  border-radius: 1.2rem;
+  color: var(--subtitle);
+  border: 1px solid rgba(250, 128, 114, 0.185);
+
+
+}
+
+header .icon-menu:hover,
+header .mode:hover {
+  color: var(--title);
+  cursor: pointer;
+  border: 1px solid rgb(255, 196, 2);
+  transition: transform 0.6s ease-out;
+}
+.icon-close{
+  font-size: 1.2rem;
+  color: var(--subtitle);
+}
+.icon-close:hover {
+  font-size: 1.4rem;
+  color: var(--subtitle);
+  color: crimson;
+  transition: 0.5s;
+  cursor: pointer;
+  transform:rotate(180deg);
+  /* rotate: 180deg; */
+}
+
+.icon-moon-o {
+  margin: auto;
+}
+
+/* pop up menu */
+header .popupmenu {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(40, 40, 48, 0.815);
+}
+
+@keyframes menumove {
+  0% {
+    transform: scale(0);
+  }
+
+  60% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+header .popupmenu ul.menu {
+  animation: menumove 0.7s ease-in-out forwards;
+  width: 85%;
+  margin: auto;
+  margin-top: 2rem;
+  border: 0px solid white;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  background-color: var(--secondary);
+}
+
+header .popupmenu ul.menu li {
+  border-bottom: 1px solid var(--border);
+  padding: 1rem;
+}
+
+header .popupmenu ul.menu li:first-child {
+  border: none;
+  text-align: right;
+  padding-bottom: 0;
+
+}
+
+header .popupmenu ul.menu li:last-child {
+  border: none;
+
+}
+
+button {
+  all: unset;
+
+}
+button:active {
+  transform: scale(0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+header .popupmenu ul.menu li a {
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 700px) {
+  header nav {
+    display: none;
+  }
+
+  .menubtn {
+    display: block;
+    border: 1px solid white;
+    background-color: white;
+  }
+}

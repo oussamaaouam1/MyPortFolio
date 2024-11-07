@@ -41,6 +41,8 @@ header .mode {
   border-radius: 1.2rem;
   color: var(--subtitle);
   border: 1px solid rgba(250, 128, 114, 0.185);
+  transition: 0.5s;
+  
 
 
 }
@@ -51,10 +53,12 @@ header .mode:hover {
   cursor: pointer;
   border: 1px solid rgb(255, 196, 2);
   transition: transform 0.6s ease-out;
+  transition: 0.5s;
 }
 .icon-close{
   font-size: 1.2rem;
   color: var(--subtitle);
+  transition: 0.5s;
 }
 .icon-close:hover {
   font-size: 1.4rem;

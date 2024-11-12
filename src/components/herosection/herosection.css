@@ -13,6 +13,18 @@ section.hero .avatar{
 section.hero .icon-verified{
   color: var(--blue);
 }
+section.hero .icons{
+  color: wheat;
+  font-size: 1.2rem;
+}
+section.hero .icons:hover {
+  color: var(--subtitle);
+  cursor: pointer;
+  transition: 0.3s;
+    font-size: 1.3rem;
+
+  
+}
 
 
 

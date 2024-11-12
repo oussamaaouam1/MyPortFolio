@@ -79,6 +79,8 @@ header .popupmenu {
   position: fixed;
   inset: 0;
   background-color: rgba(40, 40, 48, 0.815);
+  z-index: 2;
+  backdrop-filter: blur(4px);
 }
 
 @keyframes menumove {
@@ -104,6 +106,7 @@ header .popupmenu ul.menu {
   border-radius: 2rem;
   padding: 1rem 2rem;
   background-color: var(--secondary);
+  z-index: 3;
 }
 
 header .popupmenu ul.menu li {

@@ -12,16 +12,18 @@ const HeroSection = () => {
           />
           <span className="icon-verified text-blue-500"></span>
         </div>
-        <h1 className="title mt-7 text-white text-4xl font-bold w-2/3 leading-relaxed">Web designer and Front-end developer</h1>
+        <h1 className="title mt-7 text-white text-4xl font-bold w-2/3 leading-relaxed">
+          Web designer and Front-end developer
+        </h1>
         <p className="sub-title mt-8 w-2/3 text-white text-xl">
           Hii , I&apos;m Oussama Aouam ,a react front-end developer and web
           designer based in Casablanca ,Morocco ,Im a co-founder of Pickcar{" "}
         </p>
-        <div className="icons flex flex-row gap-4 mt-10">
-          <a className="icon-twitter text-white"></a>
-          <div className="icon-instagram text-white"></div>
-          <div className="icon-github text-white"></div>
-          <div className="icon-linkedin text-white"></div>
+        <div className="icons flex flex-row gap-6 mt-10 icons">
+          <a className="icon-twitter icons "></a>
+          <div className="icon-instagram icons  "></div>
+          <div className="icon-github icons "></div>
+          <div className="icon-linkedin icons "></div>
         </div>
       </div>
       <div className="right-section animation"></div>

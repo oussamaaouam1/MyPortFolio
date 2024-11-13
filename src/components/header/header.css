@@ -126,11 +126,11 @@ header .popupmenu ul.menu li:last-child {
 
 }
 
-button {
+button .mode {
   all: unset;
 
 }
-button:active {
+button.mode:active {
   transform: scale(0.4);
 }
 

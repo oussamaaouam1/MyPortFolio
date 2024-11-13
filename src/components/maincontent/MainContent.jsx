@@ -5,7 +5,7 @@ const MainContent = () => {
       <section className="left-section flex flex-col gap-4 pl-8">
         <button className="buttons">All Projects</button>
         <button className="buttons">HTML & CSS </button>
-        <button className="buttons">JavaScript</button>
+        <button className="buttons">java script</button>
         <button className="buttons">React.js</button>
         <button className="buttons">UI FIGMA</button>
       </section>

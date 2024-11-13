@@ -53,3 +53,49 @@ body {
   margin: 3rem 0;
 
 }
+.scroll2top{
+  height: 40px;
+  width: 40px;
+  background-color: var(--blue);
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  border-radius: 50%;
+  text-align: center;
+  opacity: 0.5;
+  transition: 0.5s;
+  color: white;
+  border: 1px solid white;
+}
+.scroll2top:hover{
+  opacity: 1;
+  transition: 0.5s;
+}
+
+
+
+
+
+
+
+@media (max-width:600px) {
+.scroll2top {
+    height: 40px;
+    width: 40px;
+    background-color: var(--blue);
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    border-radius: 50%;
+    text-align: center;
+    opacity: 0.3;
+    transition: 0.5s;
+    color: white;
+    border: 1px solid white;
+  }
+
+  .scroll2top:hover {
+    opacity: 1;
+    transition: 0.5s;
+  }
+}

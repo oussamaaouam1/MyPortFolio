@@ -8,18 +8,19 @@ function App() {
 
 
   return (
-<div className="container">
-  <Header />
-  <div className="Secdivider"/>
-  <HeroSection />
-  <div className="Secdivider"/>
-  <MainContent />
-  <div className="Secdivider"/>
-  <ContactUs />
-  <div className="Secdivider"/>
-  <Footer />
-</div>
-  )
+    <div className="container">
+      <Header />
+      <div className="Secdivider" />
+      <HeroSection />
+      <div className="Secdivider" />
+      <MainContent />
+      <div className="Secdivider" />
+      <ContactUs />
+      <div className="Secdivider" />
+      <Footer />
+      <button className="icon-keyboard_arrow_up scroll2top"></button>
+    </div>
+  );
 }
 
 export default App

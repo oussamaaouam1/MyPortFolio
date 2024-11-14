@@ -5,7 +5,7 @@
 
 html {
   font-family: "Poppins", sans-serif;
-
+  scroll-behavior: smooth;
 
 }
 
@@ -71,7 +71,13 @@ body {
   opacity: 1;
   transition: 0.5s;
 }
-
+.scroll2top:active{
+transform: scale(0.5);
+transition: 0.5s;
+}
+a.top{
+  transition: 0.5s;
+}
 
 
 
@@ -92,6 +98,7 @@ body {
     transition: 0.5s;
     color: white;
     border: 1px solid white;
+    z-index: 10;
   }
 
   .scroll2top:hover {

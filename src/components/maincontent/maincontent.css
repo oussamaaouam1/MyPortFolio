@@ -9,10 +9,11 @@ main section.left-section .buttons{
   padding: 10px 20px;
   font-weight: bold;
   border-radius: 10px;
-  color:var(--subtitle);
   text-align: center;
-  opacity: 0.8;
+  opacity: 0.6;
   width: 7rem;
+  color: white;
+  transition: 0.5s;
 }
 main section.left-section .buttons:hover{
   color: white;

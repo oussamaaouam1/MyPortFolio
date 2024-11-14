@@ -1,19 +1,40 @@
-import './maincontent.css'
+import { useState } from "react";
+import "./maincontent.css";
 const MainContent = () => {
+  const [selected, setSelected] = useState("all");
+
   return (
     <main className="flex gap-5 items-start  ">
       <section className="left-section flex flex-col gap-4 pl-8">
-        <button className="buttons">All Projects</button>
-        <button className="buttons">HTML & CSS </button>
+        <button
+          onClick={() => {
+            setSelected("all");
+          }}
+          className={selected === "all" ? "active " : "buttons"}
+        >
+          All Projects
+        </button>
+
+        <button
+          onClick={() => {
+            setSelected("htmlcss");
+          }}
+          className={selected === "htmlcss" ? "active " : "buttons"}
+        >
+          HTML & CSS
+        </button>
         <button className="buttons">java script</button>
         <button className="buttons">React.js</button>
         <button className="buttons">UI FIGMA</button>
       </section>
 
       <section className="right-section flex flex-wrap justify-center ">
-        {["aa","bb", "cc","",""].map((item) => {
+        {["aa", "bb", "cc", "", ""].map((item) => {
           return (
-            <article key={item} className="card border w-72 rounded-xl hover:border-blue-400 cursor-pointer m-8">
+            <article
+              key={item}
+              className="card border w-72 rounded-xl hover:border-blue-400 cursor-pointer m-8"
+            >
               <img
                 src="./public/landing page react.png"
                 alt=""
@@ -43,11 +64,10 @@ const MainContent = () => {
               </div>
             </article>
           );
-        }
-        )}
+        })}
       </section>
     </main>
   );
-}
+};
 
-export default MainContent
+export default MainContent;

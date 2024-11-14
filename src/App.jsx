@@ -8,7 +8,7 @@ function App() {
 
 
   return (
-    <div className="container">
+    <div id="top" className="container">
       <Header />
       <div className="Secdivider" />
       <HeroSection />
@@ -18,7 +18,9 @@ function App() {
       <ContactUs />
       <div className="Secdivider" />
       <Footer />
-      <button className="icon-keyboard_arrow_up scroll2top"></button>
+      <a href="#top" className="top">
+        <button className="icon-keyboard_arrow_up scroll2top"></button>
+      </a>
     </div>
   );
 }

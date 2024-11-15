@@ -1,7 +1,17 @@
 import { useState } from "react";
 import "./maincontent.css";
+
+
+
+
+const myprojects = [
+  { projectTitle: "react project", category: "react.js", imgPath: "a" },
+  { projectTitle: "html&css project", category: "htmlcss", imgPath: "b" },
+];
+
 const MainContent = () => {
   const [selected, setSelected] = useState("all");
+  const [arr, setarr] = useState(myprojects);
 
   return (
     <main className="flex gap-5 items-start  ">
@@ -9,6 +19,7 @@ const MainContent = () => {
         <button
           onClick={() => {
             setSelected("all");
+            setarr(myprojects);
           }}
           className={selected === "all" ? "active " : "buttons"}
         >
@@ -18,30 +29,56 @@ const MainContent = () => {
         <button
           onClick={() => {
             setSelected("htmlcss");
+
+            const filteredProjects = myprojects.filter(
+              (project) => project.category === "htmlcss"
+            ); // Filter for HTML & CSS
+            setarr(filteredProjects); // Set filtered projects array
           }}
           className={selected === "htmlcss" ? "active " : "buttons"}
         >
           HTML & CSS
         </button>
-        <button className="buttons">java script</button>
-        <button className="buttons">React.js</button>
-        <button className="buttons">UI FIGMA</button>
+        <button
+          onClick={() => {
+            setSelected("javascript");
+          }}
+          className={selected === "javascript" ? "active " : "buttons"}
+        >
+          java script
+        </button>
+        <button
+          onClick={() => {
+            setSelected("react");
+          }}
+          className={selected === "react" ? "active " : "buttons"}
+        >
+          React.js
+        </button>
+        <button
+          onClick={() => {
+            setSelected("figma");
+          }}
+          className={selected === "figma" ? "active " : "buttons"}
+        >
+          UI FIGMA
+        </button>
       </section>
 
       <section className="right-section flex flex-wrap justify-center ">
-        {["aa", "bb", "cc", "", ""].map((item) => {
+        {arr.map((item, index) => {
           return (
             <article
-              key={item}
+              key={index}
               className="card border w-72 rounded-xl hover:border-blue-400 cursor-pointer m-8"
             >
               <img
-                src="./public/landing page react.png"
+                src={item.imgPath}
                 alt=""
                 className="rounded-xl"
               />
               <div className="box py-4 px-2">
-                <h1 className="text-white font-bold">Landing Page</h1>
+                <h1 className="text-white font-bold">{item.projectTitle}</h1>
                 <p className="text-white text-sm py-4">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Amet, quas ut beatae fuga repudiandae adipisci, labore

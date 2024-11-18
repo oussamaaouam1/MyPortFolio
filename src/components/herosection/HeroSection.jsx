@@ -12,10 +12,10 @@ const HeroSection = () => {
           />
           <span className="icon-verified text-blue-500"></span>
         </div>
-        <h1 className="title mt-7 text-white text-4xl font-bold w-2/3 leading-relaxed">
+        <h1 className="title mt-7 text-4xl font-bold w-2/3 leading-relaxed">
           Web designer and Front-end developer
         </h1>
-        <p className="sub-title mt-8 w-2/3 text-white text-xl">
+        <p className="sub-title mt-8 w-2/3 text-xl">
           Hii , I&apos;m Oussama Aouam ,a react front-end developer and web
           designer based in Casablanca ,Morocco ,Im a co-founder of Pickcar{" "}
         </p>

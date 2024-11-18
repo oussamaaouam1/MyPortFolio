@@ -86,7 +86,7 @@
   border-radius: 10px;
   text-align: center;
   width: 7rem;
-  color: white;
+  color:var(--title);
   font-weight: bold;
   border-color: var(--blue);
   box-shadow: 0px 0px 5px  var(--blue) inset;

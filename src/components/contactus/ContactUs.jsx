@@ -1,41 +1,74 @@
 import "./contactus.css";
+import { useForm, ValidationError } from "@formspree/react";
 
 const ContactUs = () => {
+  const [state, handleSubmit] = useForm("xanybedj");
+  if (state.succeeded) {
+    return (
+      <h1 className="text-blue-600 text-xl font-bold">
+        Your Email has been sent successfully !
+      </h1>
+    );
+  }
+
   return (
     <div>
       <section className="left-section">
         <div className="mb-12">
-          <h1 className="text-white text-3xl font-bold mb-4">
+          <h1 className="title text-white text-3xl font-bold mb-4">
             <span className="icon-envelope mr-2"></span> Contact us
           </h1>
-          <p className="text-white ">
+          <p className=" sub-title text-white ">
             contact me for more information and get notified for my new
             publications
           </p>
         </div>
-        <form className="mt-4">
+        <form onSubmit={handleSubmit} className="mt-4">
           <div className="mb-6">
-            <label htmlFor="input" className="mr-3 text-white text-sm">
+            <label htmlFor="input" className="mr-3 text-sm">
               Email Address :
             </label>
-            <input required type="email" placeholder="Email Address" className="input p-1 text-white"/>
+            <input
+              required
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              className="input p-1 "
+            />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
           </div>
           <div className="flex items-center mb-6">
-            <label htmlFor="message" className="mr-3 text-white text-sm">
+            <label htmlFor="message" className="mr-3  text-sm">
               Your message :
             </label>
             <textarea
-            required
-              name=""
+              required
+              name="message"
               id=""
               rows="4"
               cols="23"
               placeholder="Message"
               className=" input p-2 text-white"
             ></textarea>
+
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
           </div>
 
-          <button className="submit-btn">Submit</button>
+          <button
+            type="submit"
+            disabled={state.submitting}
+            className="submit-btn"
+          >
+            Submit
+          </button>
         </form>
       </section>
       <section className="  right-section"></section>

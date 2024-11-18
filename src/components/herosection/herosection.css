@@ -14,16 +14,22 @@ section.hero .icon-verified{
   color: var(--blue);
 }
 section.hero .icons{
-  color: wheat;
+  color: rgb(202, 202, 202);
   font-size: 1.2rem;
 }
 section.hero .icons:hover {
   color: var(--subtitle);
   cursor: pointer;
   transition: 0.3s;
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 
   
+}
+section.hero .sub-title{
+  color: var(--subtitle);
+}
+section.hero .title{
+  color: var(--title);
 }
 
 

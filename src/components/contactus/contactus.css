@@ -1,5 +1,5 @@
 .submit-btn {
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   background-color: var(--bgHeader);
   padding: 3px 20px;
   font-weight: bold;
@@ -9,7 +9,7 @@
   opacity: 0.8;
 }
 .submit-btn:hover{
-  color: white;
+  color: var(--subtitle);
     font-weight: bold;
     cursor: pointer;
     transition: 0.5s;
@@ -21,6 +21,9 @@
   background-color: rgb(63, 63, 70,0.17);
   transition: 0.5s;
   border: 1px solid var(--border);
+  border-radius: 1rem;
+  color: var(--subtitle);
+  padding-left: 1rem;
 }
 .input:hover {
   background-color: var(--bgHeader);
@@ -31,4 +34,13 @@
   background-color: var(--bgHeader);
   border: 1px solid var(--blue);
   transition: 0.3s;
+}
+section .title{
+  color: var(--title);
+}
+section .sub-title{
+  color: var(--subtitle);
+}
+section form label{ 
+  color: var(--subtitle);
 }

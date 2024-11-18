@@ -1,9 +1,29 @@
 import "./header.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const [showmenu, setshowmenu] = useState(false);
-  setshowmenu
+  const [theme, setTheme] = useState(localStorage.getItem("currentMode") ?? "dark")
+
+  useEffect(() => {
+    if (theme === "light") {
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
+    document.getElementById("dark").classList.add("icon-sun");
+    document.getElementById("dark").classList.remove("icon-moon-o");
+    
+    
+  
+    } 
+    else if (theme === "dark") {
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
+      document.getElementById("dark").classList.add("icon-moon-o");
+      document.getElementById("dark").classList.remove("icon-sun");
+    }
+
+  }, [theme]);
+  
   return (
     <header className="flex justify-around gap-2 items-center mt-6">
       <button
@@ -32,9 +52,24 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <button className="mode flex">
-        <span className="icon-moon-o "></span>
-        {/* <span className="icon-sun"></span> */}
+      <button 
+      onClick={() => {
+        if (theme === "light") {
+          setTheme("dark");
+          localStorage.setItem("currentMode", theme === "dark" ? "light" : "dark")
+          
+        } else {
+          setTheme("light");
+          localStorage.setItem(
+            "currentMode",
+            theme === "light" ? "dark" : "light"
+          );
+          
+        }
+        }
+      }
+      className="mode flex">
+        <span id="dark" className="icon-moon-o "></span>
       </button>
       {showmenu && (
         <div className="popupmenu">

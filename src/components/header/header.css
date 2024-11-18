@@ -18,7 +18,7 @@ header nav {
   background-color: var(--bgHeader);
   padding: 0.9rem 2rem;
   border-radius: 60px;
-  box-shadow: 1px 1px 5px rgb(59, 59, 59);
+  box-shadow: 0px 0px 3px  rgb(117, 117, 117);
 }
 
 .menubtn {
@@ -70,8 +70,12 @@ header .mode:hover {
   /* rotate: 180deg; */
 }
 
-.icon-moon-o {
+.icon-moon-o,
+.icon-sun {
   margin: auto;
+}
+.icon-sun {
+  color: rgb(255, 153, 0);
 }
 
 /* pop up menu */

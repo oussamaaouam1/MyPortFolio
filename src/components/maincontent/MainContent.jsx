@@ -1,38 +1,41 @@
 import { useState } from "react";
 import "./maincontent.css";
+import myprojects from "./projectsData"; 
 
-const myprojects = [
-  {
-    projectTitle: "Currency Converter",
-    category: "react",
-    imgPath: "public/currency converter react.png",
-  },
-  {
-    projectTitle: "Headphones",
-    category: "htmlcss",
-    imgPath: "public/headphones HTML&CSS.png",
-  },
-  {
-    projectTitle: "Landing Page",
-    category: "react",
-    imgPath: "public/landing page react.png",
-  },
-  {
-    projectTitle: "html&css project",
-    category: "htmlcss",
-    imgPath: "public/smileschool HTML&CSS UI.png",
-  },
-  {
-    projectTitle: "Expense Tracker",
-    category: "react",
-    imgPath: "public/expense tracker react.png",
-  },
-  {
-    projectTitle: "Dynamic to do list",
-    category: "javascript",
-    imgPath: "public/dynamic todo list.png",
-  },
-];
+
+
+// const myprojects = [
+//   {
+//     projectTitle: "Currency Converter",
+//     category: "react",
+//     imgPath: "public/currency converter react.png",
+//   },
+//   {
+//     projectTitle: "Headphones",
+//     category: "htmlcss",
+//     imgPath: "public/headphones HTML&CSS.png",
+//   },
+//   {
+//     projectTitle: "Landing Page",
+//     category: "react",
+//     imgPath: "public/landing page react.png",
+//   },
+//   {
+//     projectTitle: "html&css project",
+//     category: "htmlcss",
+//     imgPath: "public/smileschool HTML&CSS UI.png",
+//   },
+//   {
+//     projectTitle: "Expense Tracker",
+//     category: "react",
+//     imgPath: "public/expense tracker react.png",
+//   },
+//   {
+//     projectTitle: "Dynamic to do list",
+//     category: "javascript",
+//     imgPath: "public/dynamic todo list.png",
+//   },
+// ];
 
 const MainContent = () => {
   const [selected, setSelected] = useState("all");
@@ -42,10 +45,10 @@ const MainContent = () => {
 //create a fun that can take btncategory and filter the array based on this category
 const handleClick = (categoryButton) => {
   setSelected(categoryButton);
-
   const filteredProjects = myprojects.filter(
     (project) => project.category === categoryButton
   );
+
   setarr(filteredProjects)
 }
 
@@ -107,8 +110,8 @@ const handleClick = (categoryButton) => {
             >
               <img src={project.imgPath} alt="" className="rounded-xl" />
               <div className="box py-4 px-2">
-                <h1 className="text-white font-bold">{project.projectTitle}</h1>
-                <p className="text-white text-sm py-4">
+                <h1 className="title text-white font-bold capitalized">{project.projectTitle}</h1>
+                <p className="sub-title text-white text-sm py-4">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Amet, quas ut beatae fuga repudiandae adipisci, labore
                   laudantium debitis explicabo vero quisquam{" "}

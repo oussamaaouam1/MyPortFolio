@@ -1,18 +1,24 @@
 import "./contactus.css";
 import { useForm, ValidationError } from "@formspree/react";
 
+import Lottie from "lottie-react";
+import doneAnimation from "../../../public/animations/done.json"
+import emailAnimation from "../../../public/animations/emailAnim.json";
+
+
 const ContactUs = () => {
   const [state, handleSubmit] = useForm("xanybedj");
   if (state.succeeded) {
     return (
-      <h1 className="text-blue-600 text-xl font-bold">
-        Your Email has been sent successfully !
+      <h1 className="text-green-600 text-xl font-bold flex items-center">
+        Thank You 😊,Your Email has been sent successfully !
+        <Lottie className="w-14 h-14" animationData={doneAnimation} loop={false} />
       </h1>
     );
   }
 
   return (
-    <div>
+    <div className="flex justify-around items-center">
       <section className="left-section">
         <div className="mb-12">
           <h1 className="title text-white text-3xl font-bold mb-4">
@@ -71,7 +77,13 @@ const ContactUs = () => {
           </button>
         </form>
       </section>
-      <section className="  right-section"></section>
+      <section className="right-section w-1/3">
+        <Lottie
+          className="contactAnim"
+          animationData={emailAnimation}
+          loop={true}
+        />
+      </section>
     </div>
   );
 };

@@ -44,3 +44,17 @@ section .sub-title{
 section form label{ 
   color: var(--subtitle);
 }
+
+
+
+
+
+
+
+
+@media (max-width: 600px){
+  section.right-section{
+    display: none;
+  }
+
+}

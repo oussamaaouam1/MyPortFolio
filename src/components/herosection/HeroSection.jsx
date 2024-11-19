@@ -1,8 +1,12 @@
 import './herosection.css'
+import Lottie from "lottie-react";
+import { useRandomAnimation } from './animation';
+
 
 const HeroSection = () => {
+  const currentAnimation = useRandomAnimation(); // Use the custom hook to get the current animation
   return (
-    <section className="hero flex">
+    <section className="hero flex justify-around items-center">
       <div className="left-section flex flex-col sm:flex-col ">
         <div className="parent-avatar flex gap-2 items-end">
           <img
@@ -26,7 +30,13 @@ const HeroSection = () => {
           <div className="icon-linkedin icons "></div>
         </div>
       </div>
-      <div className="right-section animation"></div>
+      <section className="animation-section w-96 ">
+        <Lottie
+          className="lottie-animation h-96 "
+          animationData={currentAnimation}
+          loop={true}
+        />
+      </section>
     </section>
   );
 }

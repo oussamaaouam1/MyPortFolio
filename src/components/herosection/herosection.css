@@ -41,3 +41,13 @@ section.hero .title{
 /* ============== */
 /* right section styles========================================================= */
 /* =============== */
+@media (max-width: 600px){
+  section.animation-section{
+    display: none;
+  }
+  section .left-section{
+    align-items: center;
+    text-align: center;
+  }
+
+}

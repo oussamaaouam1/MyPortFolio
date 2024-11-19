@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./maincontent.css";
 import myprojects from "./projectsData"; 
+import { AnimatePresence, motion } from "framer-motion";
 
 
 
@@ -69,7 +70,7 @@ const handleClick = (categoryButton) => {
 
         <button
           onClick={() => {
-            handleClick("htmlcss")// Filter for HTML & CSS
+            handleClick("htmlcss"); // Filter for HTML & CSS
           }}
           className={selected === "htmlcss" ? "active " : "buttons"} //in case of active drop .active styles if not keep .buttons style
         >
@@ -77,7 +78,7 @@ const handleClick = (categoryButton) => {
         </button>
         <button
           onClick={() => {
-          handleClick("javascript")
+            handleClick("javascript");
           }}
           className={selected === "javascript" ? "active " : "buttons"} //in case of active drop .active styles if not keep .buttons style
         >
@@ -85,7 +86,7 @@ const handleClick = (categoryButton) => {
         </button>
         <button
           onClick={() => {
-          handleClick("react")
+            handleClick("react");
           }}
           className={selected === "react" ? "active " : "buttons"} //in case of active drop .active styles if not keep .buttons style
         >
@@ -93,7 +94,7 @@ const handleClick = (categoryButton) => {
         </button>
         <button
           onClick={() => {
-            handleClick("figma")
+            handleClick("figma");
           }}
           className={selected === "figma" ? "active " : "buttons"} //in case of active drop .active styles if not keep .buttons style
         >
@@ -102,38 +103,46 @@ const handleClick = (categoryButton) => {
       </section>
 
       <section className="right-section flex flex-wrap justify-center ">
-        {arr.map((project, index) => {
-          return (
-            <article
-              key={index}
-              className="card border w-72 rounded-xl hover:border-blue-400 cursor-pointer m-8"
-            >
-              <img src={project.imgPath} alt="" className="rounded-xl" />
-              <div className="box py-4 px-2">
-                <h1 className="title text-white font-bold capitalized">{project.projectTitle}</h1>
-                <p className="sub-title text-white text-sm py-4">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Amet, quas ut beatae fuga repudiandae adipisci, labore
-                  laudantium debitis explicabo vero quisquam{" "}
-                </p>
-                <div className="flex justify-between">
-                  <div className="flex gap-4 ">
-                    <div className=" icons icon-link pl-3" />
-                    <div className=" icons icon-github" />
-                  </div>
+        <AnimatePresence>
+          {arr.map((project, index) => {
+            return (
+              <motion.article //using framer-motion library to make the cards animate
+                key={index}
+                className="card border w-72 rounded-xl hover:border-blue-400 cursor-pointer m-8"
+                layout
+                initial={{ transform: "scale(0.3)" }}
+                animate={{ transform: "scale(1)" }}
+                transition={{ type:"spring",damping: 9 }}
+              >
+                <img src={project.imgPath} alt="" className="rounded-xl" />
+                <div className="box py-4 px-2">
+                  <h1 className="title text-white font-bold capitalized">
+                    {project.projectTitle}
+                  </h1>
+                  <p className="sub-title text-white text-sm py-4">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Amet, quas ut beatae fuga repudiandae adipisci, labore
+                    laudantium debitis explicabo vero quisquam{" "}
+                  </p>
+                  <div className="flex justify-between">
+                    <div className="flex gap-4 ">
+                      <div className=" icons icon-link pl-3" />
+                      <div className=" icons icon-github" />
+                    </div>
 
-                  <a
-                    href=""
-                    className=" icons pr-4 text-center flex items-center"
-                  >
-                    more
-                    <span className="icon-arrow-right ml-1  " />
-                  </a>
+                    <a
+                      href=""
+                      className=" icons pr-4 text-center flex items-center"
+                    >
+                      more
+                      <span className="icon-arrow-right ml-1  " />
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
-          );
-        })}
+              </motion.article>
+            );
+          })}
+        </AnimatePresence>
       </section>
     </main>
   );

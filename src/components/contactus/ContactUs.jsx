@@ -77,7 +77,7 @@ const ContactUs = () => {
           </button>
         </form>
       </section>
-      <section className="right-section w-1/3">
+      <section className="anim-section w-1/3">
         <Lottie
           className="contactAnim"
           animationData={emailAnimation}

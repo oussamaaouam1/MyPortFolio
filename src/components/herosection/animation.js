@@ -14,7 +14,7 @@ export const useRandomAnimation = () => {
 
       setCurrentAnimation(animations[randomIndex]);
     };
-    const interval = setInterval(changeAnimation, 5000); // Change animation every 3 seconds
+    const interval = setInterval(changeAnimation, 10000); // Change animation every 3 seconds
       return () => clearInterval(interval); // Cleanup on;
   }, []);
   return currentAnimation;

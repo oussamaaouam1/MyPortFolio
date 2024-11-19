@@ -53,7 +53,7 @@ section form label{
 
 
 @media (max-width: 600px){
-  section.right-section{
+  div section.anim-section{
     display: none;
   }
 

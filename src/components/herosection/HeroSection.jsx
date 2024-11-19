@@ -1,9 +1,11 @@
 import './herosection.css'
 import Lottie from "lottie-react";
 import { useRandomAnimation } from './animation';
+import { useRef } from 'react';
 
 
 const HeroSection = () => {
+  const lottieRef= useRef()
   const currentAnimation = useRandomAnimation(); // Use the custom hook to get the current animation
   return (
     <section className="hero flex justify-around items-center">
@@ -32,6 +34,11 @@ const HeroSection = () => {
       </div>
       <section className="animation-section w-96 ">
         <Lottie
+          lottieRef={lottieRef}//im using this code from lottie website to slow down the animation using useRef hook
+          onLoadedImages={() => {
+            lottieRef.current.setSpeed(0.5)
+          }
+          }
           className="lottie-animation h-96 "
           animationData={currentAnimation}
           loop={true}

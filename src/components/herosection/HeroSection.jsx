@@ -12,7 +12,7 @@ const HeroSection = () => {
       <div className="left-section flex flex-col sm:flex-col ">
         <div className="parent-avatar flex gap-2 items-end">
           <img
-            src="./public/aaaaaaaaaaaaaaaa.png "
+            src="../../../public/aaaaaaaaaaaaaaaa.png "
             className=" h-24 w-24 sm:w-28 sm:h-28 md:w-32 md:h-32 avatar"
             alt="personal-photo"
           />

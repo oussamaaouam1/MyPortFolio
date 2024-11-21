@@ -9,7 +9,7 @@ const HeroSection = () => {
   const currentAnimation = useRandomAnimation(); // Use the custom hook to get the current animation
   return (
     <section className="hero flex justify-around items-center">
-      <div className="left-section flex flex-col sm:flex-col ">
+      <div className="left-section flex flex-col sm:flex-col ">   
         <div className="parent-avatar flex gap-2 items-end">
           <img
             src="/aaaaaaaaaaaaaaaa.png "
@@ -22,8 +22,9 @@ const HeroSection = () => {
           Web designer and Front-end developer
         </h1>
         <p className="sub-title mt-8 w-2/3 text-xl">
-          Hii , I&apos;m Oussama Aouam ,a react front-end developer and web
-          designer based in Casablanca ,Morocco ,Im a co-founder of Pickcar{" "}
+          Hii!! , I&apos;m Oussama Aouam  ,a react front-end developer and web
+          designer based in Casablanca ,Morocco ,Im a co-founder of <span className='text-2xl font-bold'>Pickcar</span>  
+          {""} where we will provide a car renting services . 
         </p>
         <div className="icons flex flex-row gap-6 mt-10 icons">
           <a className="icon-twitter icons "></a>

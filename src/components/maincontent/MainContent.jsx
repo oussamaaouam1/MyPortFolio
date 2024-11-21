@@ -120,9 +120,7 @@ const handleClick = (categoryButton) => {
                     {project.projectTitle}
                   </h1>
                   <p className="sub-title text-white text-sm py-4">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Amet, quas ut beatae fuga repudiandae adipisci, labore
-                    laudantium debitis explicabo vero quisquam{" "}
+                    {project.description}
                   </p>
                   <div className="flex justify-between">
                     <div className="flex gap-4 ">

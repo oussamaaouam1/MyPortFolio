@@ -7,7 +7,7 @@ const TechSlider = () => {
   );
 
   useEffect(() => {
-    // Initial theme check
+    // Initial theme check for dark mode or light
     const currentTheme = localStorage.getItem("currentMode");
     setTheme(currentTheme);
 

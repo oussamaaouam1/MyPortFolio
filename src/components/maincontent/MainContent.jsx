@@ -1,9 +1,7 @@
 import { useState } from "react";
 import "./maincontent.css";
-import myprojects from "./projectsData"; 
+import myprojects from "./projectsData";
 import { AnimatePresence, motion } from "framer-motion";
-
-
 
 // const myprojects = [
 //   {
@@ -42,18 +40,15 @@ const MainContent = () => {
   const [selected, setSelected] = useState("all");
   const [arr, setarr] = useState(myprojects);
 
+  //create a fun that can take btncategory and filter the array based on this category
+  const handleClick = (categoryButton) => {
+    setSelected(categoryButton);
+    const filteredProjects = myprojects.filter(
+      (project) => project.category === categoryButton
+    );
 
-//create a fun that can take btncategory and filter the array based on this category
-const handleClick = (categoryButton) => {
-  setSelected(categoryButton);
-  const filteredProjects = myprojects.filter(
-    (project) => project.category === categoryButton
-  );
-
-  setarr(filteredProjects)
-}
-
-
+    setarr(filteredProjects);
+  };
 
   return (
     <main className="flex gap-5 items-start  ">
@@ -66,6 +61,15 @@ const handleClick = (categoryButton) => {
           className={selected === "all" ? "active " : "buttons"} //in case of active drop .active styles if not keep .buttons styles
         >
           All Projects
+        </button>
+
+        <button
+          onClick={() => {
+            handleClick("next");
+          }}
+          className={selected === "next" ? "active " : "buttons"} //in case of active drop .active styles if not keep .buttons style
+        >
+          Next.js
         </button>
 
         <button
@@ -112,7 +116,7 @@ const handleClick = (categoryButton) => {
                 layout
                 initial={{ transform: "scale(0.3)" }}
                 animate={{ transform: "scale(1)" }}
-                transition={{ type:"spring",damping: 9 }}
+                transition={{ type: "spring", damping: 9 }}
               >
                 <img src={project.imgPath} alt="" className="rounded-xl" />
                 <div className="box py-4 px-2">
@@ -124,17 +128,33 @@ const handleClick = (categoryButton) => {
                   </p>
                   <div className="flex justify-between">
                     <div className="flex gap-4 ">
-                      <div className=" icons icon-link pl-3" />
-                      <div className=" icons icon-github" />
+                      {project.website && (
+                        <a
+                          href={project.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="icons icon-link pl-3"
+                          aria-label="Visit website"
+                        />
+                      )}
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="icons icon-github"
+                          aria-label="View source on GitHub"
+                        />
+                      )}
                     </div>
 
-                    <a
+                    {/* <a
                       href=""
                       className=" icons pr-4 text-center flex items-center"
                     >
                       more
                       <span className="icon-arrow-right ml-1  " />
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </motion.article>

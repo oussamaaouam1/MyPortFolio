@@ -1,15 +1,14 @@
-import './herosection.css'
+import "./herosection.css";
 import Lottie from "lottie-react";
-import { useRandomAnimation } from './animation';
-import { useRef } from 'react';
-
+import { useRandomAnimation } from "./animation";
+import { useRef } from "react";
 
 const HeroSection = () => {
-  const lottieRef= useRef()
+  const lottieRef = useRef();
   const currentAnimation = useRandomAnimation(); // Use the custom hook to get the current animation
   return (
     <section className="hero flex justify-around items-center">
-      <div className="left-section flex flex-col sm:flex-col ">   
+      <div className="left-section flex flex-col sm:flex-col ">
         <div className="parent-avatar flex gap-2 items-end">
           <img
             src="/aaaaaaaaaaaaaaaa.png "
@@ -22,24 +21,48 @@ const HeroSection = () => {
           Web designer and Front-end developer
         </h1>
         <p className="sub-title mt-8 w-2/3 text-xl">
-          Hii!! , I&apos;m Oussama Aouam  ,a react front-end developer and web
-          designer based in Casablanca ,Morocco ,Im a co-founder of <span className='text-2xl font-bold'>Pickcar</span>  
-          {""} where we will provide a car renting services . 
+          Hii!! , I&apos;m Oussama Aouam ,a react front-end developer and web
+          designer based in Casablanca ,Morocco ,Im a co-founder of{" "}
+          <span className="text-2xl font-bold">Pickcar</span>
+          {""} where we will provide a car renting services .
         </p>
         <div className="icons flex flex-row gap-6 mt-10 icons">
-          <a className="icon-twitter icons "></a>
-          <div className="icon-instagram icons  "></div>
-          <div className="icon-github icons "></div>
-          <div className="icon-linkedin icons "></div>
+          <a
+            href="https://x.com/OussamaAouam1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-twitter icons"
+            aria-label="Twitter Profile"
+          ></a>
+          <a
+            href="https://www.instagram.com/aouamoussama/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-instagram icons"
+            aria-label="Instagram Profile"
+          ></a>
+          <a
+            href="https://github.com/oussamaaouam1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-github icons"
+            aria-label="GitHub Profile"
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/oussamaaouam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-linkedin icons"
+            aria-label="LinkedIn Profile"
+          ></a>
         </div>
       </div>
       <section className="animation-section w-96 ">
         <Lottie
-          lottieRef={lottieRef}//im using this code from lottie website to slow down the animation using useRef hook
+          lottieRef={lottieRef} //im using this code from lottie website to slow down the animation using useRef hook
           onLoadedImages={() => {
-            lottieRef.current.setSpeed(0.5)
-          }
-          }
+            lottieRef.current.setSpeed(0.5);
+          }}
           className="lottie-animation h-96 "
           animationData={currentAnimation}
           loop={true}
@@ -47,6 +70,6 @@ const HeroSection = () => {
       </section>
     </section>
   );
-}
+};
 
-export default HeroSection
+export default HeroSection;

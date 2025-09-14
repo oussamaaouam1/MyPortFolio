@@ -4,7 +4,7 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import HeroSection from "./components/herosection/HeroSection";
 import MainContent from "./components/maincontent/MainContent";
-import TechSlider from "./components/techslider/TechSlider";
+import TechSlider from "./components/techslider/TechSliders";
 
 function App() {
   const [scrollbtn, setscrollbtn] = useState(false); //control display of scroll to the top btn
